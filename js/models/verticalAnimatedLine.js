@@ -6,6 +6,8 @@ var verticalLine = function(position,size,speed){
 	function _display(position, size){
 		element.className = size;
 		element.style="position:absolute; left:"+position;
+		element.className += " verticalColumnLarge";
+		element.className += " matrixFont";
 		document.body.appendChild(element);
 	}
 	function _addCharacter(character){
