@@ -1,0 +1,100 @@
+// Border Radius. The background-clip property prevents "leaking the color outside the box"
+@mixin border-radius($value: 0) {
+    border-radius: $value;
+    background-clip: padding-box; 
+}
+
+
+// Specify columns in the content
+@mixin column-count($cols: 1, $gap: 5) {
+    -webkit-column-count: $cols;  -webkit-column-gap: $gap; 
+       -moz-column-count: $cols;     -moz-column-gap: $gap; 
+            column-count: $cols;          column-gap: $gap;     
+}
+
+
+// Box shadow. To specify no shadow, simply pass in none as the only argument
+// Argument should be of x offset, y offset, blur size, color format
+@mixin box-shadow($values) {
+    -webkit-box-shadow: $values;
+            box-shadow: $values;
+}
+
+
+// Background gradients. Simple top to bottom gradients only
+@mixin background-gradient($from, $to, $start:true) {
+    @if $start == true { background-color: $from; }
+    background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to)); 
+    background-image: -webkit-linear-gradient(top, $from, $to); 
+    background-image:    -moz-linear-gradient(top, $from, $to); 
+    background-image:     -ms-linear-gradient(top, $from, $to); 
+    background-image:      -o-linear-gradient(top, $from, $to); 
+    background-image:         linear-gradient(top, $from, $to);
+}
+
+// Background gradients. Simple top to middle to bottom gradients only
+@mixin background-gradient2($from, $middle, $to, $start:true) {
+    @if $start == true { background-color: $middle; }
+    background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to)); 
+    background-image: -webkit-linear-gradient(top, $from, $middle, $to); 
+    background-image:    -moz-linear-gradient(top, $from, $middle, $to); 
+    background-image:     -ms-linear-gradient(top, $from, $middle, $to); 
+    background-image:      -o-linear-gradient(top, $from, $middle, $to); 
+    background-image:         linear-gradient(top, $from, $middle, $to);
+}
+
+
+// Rotate element. Include 'deg' with no spacing in the argument, ie box-rotate(90deg);
+@mixin box-rotate($deg: '0deg') {
+    -webkit-transform: rotate($deg);  
+       -moz-transform: rotate($deg);  
+        -ms-transform: rotate($deg);  
+         -o-transform: rotate($deg);  
+            transform: rotate($deg);  
+                 zoom: 1;
+}
+
+// Box Sizing. Change the default box-model
+@mixin box-sizing($value:border-box) {
+    -webkit-box-sizing: $value; /* safari13+ */
+     -khtml-box-sizing: $value; /* konqueror */
+       -moz-box-sizing: $value; /* ff2+ */
+        -ms-box-sizing: $value; /* ie8+ */
+            box-sizing: $value; /* css3 reccomendation */
+}
+
+// Make text (un)selectable. Valid values are:	none | text | toggle | element | elements | all | inherit
+@mixin user-select($value: none) {
+	-webkit-user-select: $value;
+	 -khtml-user-select: $value;
+	   -moz-user-select: $value;
+	     -o-user-select: $value;
+	        user-select: $value;
+}
+
+
+// Opacity
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$opacity * 100})";
+    filter: alpha(opacity=$opacity * 100);
+}
+
+
+// Text Selection override. Defaults to no-element to add the property to the document
+@mixin selection($bg: white, $color: black, $shadow: none, $ele: '') {
+	#{$ele}::-moz-selection, #{$ele}::selection { 
+		background: $bg; 
+		color: $color;
+		text-shadow: $shadow;
+	}
+}
+
+
+// CSS transitions
+@mixin transition( $opt ) {
+     -webkit-transition: $opt; 
+        -moz-transition: $opt; 
+          -o-transition: $opt; 
+             transition: $opt; 
+}
