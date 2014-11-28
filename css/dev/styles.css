@@ -1,1 +1,53 @@
-//This is the compiled version of all SASS files.
+/*!
+* Description: CSS Styles. 
+*/
+/**
+* These include the SASS files and output them to a CSS file. All the styles
+* should make a small css file that can be downloaded once and cached to
+* improve the end user experience. If the outputted file is found to be too
+* large, it can be broken up into smaller files.
+*/
+/* line 2, ../sass/core/_fonts.scss */
+.matrixFont {
+  color: #33cc00;
+}
+
+/* line 2, ../sass/core/_structure.scss */
+body {
+  background-color: #000000;
+}
+
+/* line 2, ../sass/components/_lettering.scss */
+.verticalColumnSmall {
+  width: 9px;
+  font-size: 8px;
+  z-index: 1;
+}
+
+/* line 7, ../sass/components/_lettering.scss */
+.verticalColumnMedium {
+  width: 17px;
+  font-size: 16px;
+  z-index: 50;
+}
+
+/* line 12, ../sass/components/_lettering.scss */
+.verticalColumnLarge {
+  width: 25px;
+  font-size: 24px;
+  z-index: 100;
+}
+
+/*!
+* Line break
+*/
+/**
+* These are the site core stylings. Things like global a, h1, p stylings 
+* should and default page structure go in here. Anything specific to a single 
+* page or override should go in the pages sections.
+*/
+/*!
+* Line break
+*/
+
+/*# sourceMappingURL=styles.css.map */
