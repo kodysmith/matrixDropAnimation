@@ -6,8 +6,10 @@
 			var position = Math.floor(Math.random()*1000);
 			var size = Math.floor(Math.random()*1000);
 			var speed = Math.floor(Math.random()*1000);
-			linesArray[i] = new verticleLine();
-			linesArray[i].display(position, size, speed);
+			linesArray[i] = new verticalLine();
+			setTimeout(function(){
+				linesArray[i].display(position, size, speed);
+			},Math.random()*2000);
 		}
 	}
 }
