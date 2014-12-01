@@ -1,20 +1,17 @@
 // example code
  document.onreadystatechange = function () { 
  	if (document.readyState == "complete") { //document is ready. Do your stuff here } }
+ 	//	matrix();
+	}
+}
+
 		function matrix(){
 			setTimeout(function(){
 				var line = new verticalLine();
 				line.display();
 				matrix();
 			},Math.floor(Math.random()*2000));
-			
-
 		}
-		
-	}
-}
-
-
 /*function matrix(lines){
 
 	var linesArray = Array();

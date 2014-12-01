@@ -33,6 +33,13 @@ var verticalLine = function(position,size,speed){
 	}
 
 	function stop(){
+		setTimeout(function(){
+			element.style.opacity = element.style.opacity -0.05;
+			if (element.style.opacity <= 0) {
+				return "";
+				document.body.removeChild(element);
+			}
+		}, 250);
 
 	}
 	
