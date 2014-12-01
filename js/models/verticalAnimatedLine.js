@@ -2,8 +2,10 @@
 var verticalLine = function(position,size,speed){
 	var characterArray = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(_+-=~`";
 	var element = document.createElement('div');
-
-	function _display(position, size){
+	var position = Math.floor(Math.random()*1000);
+	var size = Math.floor(Math.random()*1000);
+	var speed = Math.floor(Math.random()*1000);
+	function _display(){
 		element.className = size;
 		element.style.position = "absolute"; 
 		element.style.left = position + "px";
@@ -35,7 +37,7 @@ var verticalLine = function(position,size,speed){
 	}
 	
 	return {
-		display: function(position,size,speed){_display(position,size); _start(speed);},
+		display: function(){_display(position,size); _start(speed);},
 		addChar: function(character){_addCharacter(character);}
 	}
 }
