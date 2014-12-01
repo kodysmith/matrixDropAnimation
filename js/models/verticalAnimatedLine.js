@@ -1,6 +1,6 @@
 // this file should contain the model code for vertical animated lines
-function randomRange() {
-	return Math.random()*(120-20) + 20;
+function randomRange(min, max) {
+	return Math.random()*(max-min) + min;
 }
 var verticalLine = function(position,size,speed){
 	var characterArray = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(_+-=~`";
@@ -26,7 +26,7 @@ var verticalLine = function(position,size,speed){
 
 	function _start(speed){
 		setTimeout(function(){
-			if (element.innerHTML.length < randomRange()) {
+			if (element.innerHTML.length < randomRange(20,800)) {
 				_addCharacter(characterArray[Math.round(Math.random()*35)] + " ");
 				_start(speed);
 			}
