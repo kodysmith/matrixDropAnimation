@@ -9,23 +9,25 @@ var verticalLine = function(position,size,speed){
 	var newLetterElement = document.createElement('span');
 	    newLetterElement.className = " newLetter";
 	var oldLettersElement = document.createElement('span');
-	var position = Math.floor(Math.random()*1000);
+	var positionX = Math.floor(Math.random()*1000);
+	var positionY = randomRange(window.innerHeight/2, -10);
 	var size = Math.floor(Math.random()*1000);
-	var speed = Math.floor(Math.random()*1000);
+	var speed = randomRange(100, 650);
 	function _display(){
 		element.className = size;
-		element.style.position = "absolute"; 
-		element.style.left = position + "px";
+		element.style.position = "absolute";
+		element.style.top = positionY + "px"; 
+		element.style.left = positionX + "px";
 		element.style.opacity = 1;
 		element.className += " verticalColumn";
 		element.className += " matrixFont";
 		element.appendChild(oldLettersElement);
-		element.appendChild(newletterElement);
+		element.appendChild(newLetterElement);
 		document.body.appendChild(element);
 	}
 	function _addCharacter(character){
-		oldLettersElement.innerHTML+=newletterElement.innerHTML;
-		newletterElement.innerHTML=character;
+		oldLettersElement.innerHTML+=newLetterElement.innerHTML;
+		newLetterElement.innerHTML=character;
 	}
 	function remove(){
 
