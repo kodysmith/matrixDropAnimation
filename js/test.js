@@ -10,7 +10,7 @@
 				var line = new verticalLine();
 				line.display();
 				matrix();
-			},Math.floor(Math.random()*2000));
+			},Math.floor(Math.random()*250));
 		}
 /*function matrix(lines){
 
