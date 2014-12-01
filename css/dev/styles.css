@@ -12,6 +12,11 @@
   color: #33cc00;
 }
 
+/* line 5, ../sass/core/_fonts.scss */
+.newLetter {
+  color: #ffffff;
+}
+
 /* line 2, ../sass/core/_structure.scss */
 body {
   background-color: #000000;

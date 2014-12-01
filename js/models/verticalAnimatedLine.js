@@ -3,8 +3,11 @@ function randomRange(min, max) {
 	return Math.random()*(max-min) + min;
 }
 var verticalLine = function(position,size,speed){
-	var characterArray = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(_+-=~`";
+	var stockCharacterArray = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(_+-=~`";
+	var randomCharacterArray = Array ();
 	var element = document.createElement('div');
+	var newLetterElement = document.createElement('span');
+	    newLetterElement.className = " newLetter"
 	var position = Math.floor(Math.random()*1000);
 	var size = Math.floor(Math.random()*1000);
 	var speed = Math.floor(Math.random()*1000);
@@ -18,6 +21,7 @@ var verticalLine = function(position,size,speed){
 		document.body.appendChild(element);
 	}
 	function _addCharacter(character){
+		newletterElement.innerHTML+=character;
 		element.innerHTML+=character;
 	}
 	function remove(){
@@ -27,7 +31,7 @@ var verticalLine = function(position,size,speed){
 	function _start(speed){
 		setTimeout(function(){
 			if (element.innerHTML.length < randomRange(20,800)) {
-				_addCharacter(characterArray[Math.round(Math.random()*35)] + " ");
+				_addCharacter(stockCharacterArray[Math.round(Math.random()*35)] + " ");
 				_start(speed);
 			}
 			else {
