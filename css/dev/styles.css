@@ -18,24 +18,8 @@ body {
 }
 
 /* line 2, ../sass/components/_lettering.scss */
-.verticalColumnSmall {
+.verticalColumn {
   width: 9px;
-  font-size: 8px;
-  z-index: 1;
-}
-
-/* line 7, ../sass/components/_lettering.scss */
-.verticalColumnMedium {
-  width: 17px;
-  font-size: 16px;
-  z-index: 50;
-}
-
-/* line 12, ../sass/components/_lettering.scss */
-.verticalColumnLarge {
-  width: 25px;
-  font-size: 24px;
-  z-index: 100;
 }
 
 /*!

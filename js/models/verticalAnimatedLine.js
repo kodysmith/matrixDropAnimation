@@ -1,6 +1,6 @@
 // this file should contain the model code for vertical animated lines
 var verticalLine = function(position,size,speed){
-	var characterArray = Array('a','b','c','d','e','f','g','h','i','j');
+	var characterArray = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(_+-=~`";
 	var element = document.createElement('div');
 
 	function _display(position, size){
@@ -17,8 +17,16 @@ var verticalLine = function(position,size,speed){
 
 	}
 
-	function _start(){
-
+	function _start(speed){
+		setTimeout(function(){
+			if (element.innerHTML.length < 20) {
+				_addCharacter(characterArray[Math.round(Math.random()*35)] + " ");
+				_start(speed);
+			}
+			else {
+				stop();
+			}
+		},speed);
 	}
 
 	function stop(){
