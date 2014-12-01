@@ -9,6 +9,7 @@ var verticalLine = function(position,size,speed){
 		element.className = size;
 		element.style.position = "absolute"; 
 		element.style.left = position + "px";
+		element.style.opacity = 1;
 		element.className += " verticalColumn";
 		element.className += " matrixFont";
 		document.body.appendChild(element);
@@ -22,7 +23,7 @@ var verticalLine = function(position,size,speed){
 
 	function _start(speed){
 		setTimeout(function(){
-			if (element.innerHTML.length < 140) {
+			if (element.innerHTML.length < Math.round(Math.random()*100)) {
 				_addCharacter(characterArray[Math.round(Math.random()*35)] + " ");
 				_start(speed);
 			}
@@ -36,8 +37,8 @@ var verticalLine = function(position,size,speed){
 		setTimeout(function(){
 			element.style.opacity = element.style.opacity -0.05;
 			if (element.style.opacity <= 0) {
-				return "";
 				document.body.removeChild(element);
+				return "";
 			}
 		}, 250);
 
