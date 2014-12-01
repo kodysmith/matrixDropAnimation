@@ -1,19 +1,13 @@
 // example code
  document.onreadystatechange = function () { 
  	if (document.readyState == "complete") { //document is ready. Do your stuff here } }
-		var linesArray = [];
-		var position;
-		var size;
-		var speed;
-		var arrayPosition;
 		for (var i = 0; i < 20; i++) {
-			position = Math.floor(Math.random()*1000);
-			size = Math.floor(Math.random()*1000);
-			speed = Math.floor(Math.random()*1000);
-			arrayPosition = i;
-			linesArray[arrayPosition] = new verticalLine();
+			var position = Math.floor(Math.random()*1000);
+			var size = Math.floor(Math.random()*1000);
+			var speed = Math.floor(Math.random()*1000);
+			var line = new verticalLine();
 			setTimeout(function(){
-				linesArray[arrayPosition].display(position, size, speed);
+				line.display(position, size, speed);
 			},Math.random()*2000);
 		}
 	}
