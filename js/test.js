@@ -1,16 +1,34 @@
 // example code
+var playState=1;
  document.onreadystatechange = function () { 
  	if (document.readyState == "complete") { //document is ready. Do your stuff here } }
- 	//	matrix();
+ 		document.getElementsByTagName('body')[0].addEventListener('click',function(){
+		 	if(playState==1){
+		 		playState=0;
+		 	}else{
+		 		playState=1;
+		 	}
+		 });
+ 		matrix();
 	}
 }
-
+function play(){
+	setTimeout(function(){
+		matrix();
+	},1000);
+}
 		function matrix(){
 			setTimeout(function(){
-				var line = new verticalLine();
-				line.display();
-				matrix();
-			},Math.floor(Math.random()*2000));
+				
+				if(playState==1){
+					var line = new verticalLine();
+					line.display();
+			 		matrix();
+			 	}else{
+			 		play();
+			 	}
+				
+			},Math.floor(Math.random()*100));
 		}
 /*function matrix(lines){
 
