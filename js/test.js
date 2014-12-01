@@ -1,13 +1,16 @@
 // example code
  document.onreadystatechange = function () { 
  	if (document.readyState == "complete") { //document is ready. Do your stuff here } }
-		var linesArray = [];
-		for (var i = 0; i < 20; i++) {
-			var linesArray[i] = new verticalLine();
+		function matrix(){
 			setTimeout(function(){
-				linesArray[i].display();
-			},Math.random()*2000);
+				var line = new verticalLine();
+				line.display();
+				matrix();
+			},Math.floor(Math.random()*2000));
+			
+
 		}
+		
 	}
 }
 
