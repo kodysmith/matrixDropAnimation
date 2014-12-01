@@ -7,7 +7,8 @@ var verticalLine = function(position,size,speed){
 	var randomCharacterArray = Array ();
 	var element = document.createElement('div');
 	var newLetterElement = document.createElement('span');
-	    newLetterElement.className = " newLetter"
+	    newLetterElement.className = " newLetter";
+	var oldLettersElement = document.createElement('span');
 	var position = Math.floor(Math.random()*1000);
 	var size = Math.floor(Math.random()*1000);
 	var speed = Math.floor(Math.random()*1000);
@@ -18,11 +19,13 @@ var verticalLine = function(position,size,speed){
 		element.style.opacity = 1;
 		element.className += " verticalColumn";
 		element.className += " matrixFont";
+		element.appendChild(oldLettersElement);
+		element.appendChild(newletterElement);
 		document.body.appendChild(element);
 	}
 	function _addCharacter(character){
-		newletterElement.innerHTML+=character;
-		element.innerHTML+=character;
+		oldLettersElement.innerHTML+=newletterElement.innerHTML;
+		newletterElement.innerHTML=character;
 	}
 	function remove(){
 
