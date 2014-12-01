@@ -15,7 +15,7 @@ var verticalLine = function(position,size,speed){
 	var speed = randomRange(100, 650);
 	function _display(){
 		element.style.fontSize = size + "em";
-		element.style.width = size*10 + "px";
+		element.style.width = size*10 + "px"
 		element.style.position = "absolute";
 		element.style.top = positionY + "px"; 
 		element.style.left = positionX + "px";
