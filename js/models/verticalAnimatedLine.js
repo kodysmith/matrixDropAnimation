@@ -6,7 +6,7 @@ var verticalLine = function(position,size,speed){
 	function _display(position, size){
 		element.className = size;
 		element.style="position:absolute; left:"+position;
-		element.className += " verticalColumnLarge";
+		element.className += " verticalColumn";
 		element.className += " matrixFont";
 		document.body.appendChild(element);
 	}
@@ -19,7 +19,7 @@ var verticalLine = function(position,size,speed){
 
 	function _start(speed){
 		setTimeout(function(){
-			if (element.innerHTML.length < 20) {
+			if (element.innerHTML.length < 140) {
 				_addCharacter(characterArray[Math.round(Math.random()*35)] + " ");
 				_start(speed);
 			}
