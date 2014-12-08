@@ -5,11 +5,10 @@ function randomRange(min, max) {
 var verticalLine = function(position,size,speed){
 	var options = {
 					'animationElement':'divMatrix',
-					'depthSizeRange':Array(2,2),
 					'maxVerticalLines': 40,
 	 				'positionX' : randomRange(window.innerWidth, -10),
 		 			'positionY' : randomRange(window.innerHeight/2, -10),
-	 				'size' : randomRange(options.depthSizeRange[0],options.depthSizeRange[1]),
+	 				'size' : 1,
 	 				'speed' : randomRange(100, 650)
 					}
 	var stockCharacterArray = "0123456789!@#$%^&*(_+-=~`0123456789!@#$%^&*(_+-=~`0123456789!@#$%^&*(_+-=~`0123456789!@#$%^&*(_+-=~`0123456789!@#$%^&*(_+-=~`";
