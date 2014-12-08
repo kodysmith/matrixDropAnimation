@@ -3,6 +3,7 @@ function randomRange(min, max) {
 	return Math.random()*(max-min) + min;
 }
 var verticalLine = function(position,size,speed){
+	var options = {'animationElement':'.divMatrix'}
 	var stockCharacterArray = "0123456789!@#$%^&*(_+-=~`0123456789!@#$%^&*(_+-=~`0123456789!@#$%^&*(_+-=~`0123456789!@#$%^&*(_+-=~`0123456789!@#$%^&*(_+-=~`";
 	var randomCharacterArray = Array ();
 	var element = document.createElement('div');
@@ -24,7 +25,7 @@ var verticalLine = function(position,size,speed){
 		element.className += " matrixFont";
 		element.appendChild(oldLettersElement);
 		element.appendChild(newLetterElement);
-		document.body.appendChild(element);
+		document.getElementsByClassName(options.animationElement).appendChild(element);
 	}
 	function _addCharacter(character){
 		oldLettersElement.innerHTML+=newLetterElement.innerHTML;
