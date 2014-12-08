@@ -51,7 +51,7 @@ var verticalLine = function(position,size,speed){
 		setTimeout(function(){
 			element.style.opacity = element.style.opacity -0.05;
 			if (element.style.opacity <= 0) {
-				document.body.removeChild(element);
+				element.parentNode.removeChild(element);
 				return "";
 			}
 			stop();
