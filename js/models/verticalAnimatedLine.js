@@ -17,7 +17,7 @@ var verticalLine = function(position,size,speed){
 	var element = document.createElement('div');
 	var newLetterElement = document.createElement('span');
 	    newLetterElement.className = " newLetter";
-	var oldLettersElement = document.createElement('span'),
+	var oldLettersElement = document.createElement('span');
 	function _display(){
 		element.style.fontSize = size + "em";
 		element.style.width = size*10 + "px"
