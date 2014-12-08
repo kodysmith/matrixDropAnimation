@@ -7,7 +7,6 @@ var verticalLine = function(position,size,speed){
 					'animationElement':'divMatrix',
 					'depthSizeRange':Array(2,2),
 					'maxVerticalLines': 40,
-					'oldLettersElement' = document.createElement('span'),
 	 				'positionX' = randomRange(window.innerWidth, -10),
 		 			'positionY' = randomRange(window.innerHeight/2, -10),
 	 				'size' = randomRange(options.depthSizeRange[0],options.depthSizeRange[1]),
@@ -18,12 +17,13 @@ var verticalLine = function(position,size,speed){
 	var element = document.createElement('div');
 	var newLetterElement = document.createElement('span');
 	    newLetterElement.className = " newLetter";
+	var oldLettersElement = document.createElement('span'),
 	function _display(){
 		element.style.fontSize = size + "em";
 		element.style.width = size*10 + "px"
 		element.style.position = "absolute";
-		element.style.top = positionY + "px"; 
-		element.style.left = positionX + "px";
+		element.style.top = options.positionY + "px"; 
+		element.style.left = options.positionX + "px";
 		element.style.opacity = 1;
 		element.className += " verticalColumn";
 		element.className += " matrixFont";
@@ -39,18 +39,18 @@ var verticalLine = function(position,size,speed){
 
 	}
 
-	function _start(speed){
+	function _start(options.speed){
 		setTimeout(function(){
 			var numberOfLines = element.parentElement.childNodes.length;
 			if (numberOfLines > options.maxVerticalLines) {
 			if (element.innerHTML.length < randomRange(20,1600)) {
 				_addCharacter(stockCharacterArray[Math.floor(randomRange(0,stockCharacterArray.length))] + "\n");
-				_start(speed);
+				_start(options.speed);
 			}
 			else {
 				stop();
 			}
-		},speed);
+		},options.speed);
 	}
 
 	function stop(){
@@ -66,7 +66,7 @@ var verticalLine = function(position,size,speed){
 	}
 	
 	return {
-		display: function(){_display(position,size); _start(speed);},
+		display: function(){_display(); _start(options.speed);},
 		addChar: function(character){_addCharacter(character);},
 		options: options
 	}
