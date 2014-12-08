@@ -20,9 +20,8 @@ function play(){
 		function matrix(){
 			setTimeout(function(){
 				var lineCount = document.getElementsByClassName('divMatrix')[0].childNodes.length;
-				if(playState == 1) {
-					var line = new verticalLine();
-					line.options.depthSizeRange = Array(2,2);
+				if(playState == 1 && lineCount <= 40) {
+					var line = new verticalLine;
 					line.display();
 			 		matrix();
 			 	}else{
