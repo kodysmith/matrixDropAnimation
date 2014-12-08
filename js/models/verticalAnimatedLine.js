@@ -46,9 +46,9 @@ var verticalLine = function(position,size,speed){
 					_addCharacter(stockCharacterArray[Math.floor(randomRange(0,stockCharacterArray.length))] + "\n");
 					_start(options.speed);
 				}
-			}
-			else {
-				stop();
+				else {
+					stop();
+				}
 			}
 		},speed);
 	}
