@@ -39,7 +39,7 @@ var verticalLine = function(position,size,speed){
 
 	}
 
-	function _start(options.speed){
+	function _start(speed){
 		setTimeout(function(){
 			var numberOfLines = element.parentElement.childNodes.length;
 			if (numberOfLines > options.maxVerticalLines) {
