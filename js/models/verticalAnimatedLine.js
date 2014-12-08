@@ -25,7 +25,7 @@ var verticalLine = function(position,size,speed){
 		element.className += " matrixFont";
 		element.appendChild(oldLettersElement);
 		element.appendChild(newLetterElement);
-		document.getElementsByClassName(options.animationElement).appendChild(element);
+		document.getElementsByClassName(options.animationElement).innerHTML+=element;
 	}
 	function _addCharacter(character){
 		oldLettersElement.innerHTML+=newLetterElement.innerHTML;
