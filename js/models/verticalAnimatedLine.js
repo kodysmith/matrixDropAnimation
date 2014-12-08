@@ -50,7 +50,7 @@ var verticalLine = function(position,size,speed){
 			else {
 				stop();
 			}
-		},options.speed);
+		},speed);
 	}
 
 	function stop(){
