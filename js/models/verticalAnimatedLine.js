@@ -42,7 +42,7 @@ var verticalLine = function(position,size,speed){
 	function _start(speed){
 		setTimeout(function(){
 			var numberOfLines = element.parentElement.childNodes.length;
-			if (numberOfLines > options.maxVerticalLines) {
+			//if (numberOfLines > options.maxVerticalLines) {
 			if (element.innerHTML.length < randomRange(20,1600)) {
 				_addCharacter(stockCharacterArray[Math.floor(randomRange(0,stockCharacterArray.length))] + "\n");
 				_start(options.speed);
