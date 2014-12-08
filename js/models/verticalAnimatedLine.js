@@ -3,7 +3,10 @@ function randomRange(min, max) {
 	return Math.random()*(max-min) + min;
 }
 var verticalLine = function(position,size,speed){
-	var options = {'animationElement':'divMatrix'}
+	var options = {
+					'animationElement':'divMatrix',
+					'depthSizeRange':Array(2,2)
+					}
 	var stockCharacterArray = "0123456789!@#$%^&*(_+-=~`0123456789!@#$%^&*(_+-=~`0123456789!@#$%^&*(_+-=~`0123456789!@#$%^&*(_+-=~`0123456789!@#$%^&*(_+-=~`";
 	var randomCharacterArray = Array ();
 	var element = document.createElement('div');
@@ -12,7 +15,7 @@ var verticalLine = function(position,size,speed){
 	var oldLettersElement = document.createElement('span');
 	var positionX = randomRange(window.innerWidth, -10);
 	var positionY = randomRange(window.innerHeight/2, -10);
-	var size = Math.random()*2;
+	var size = randomRange(options.depthSizeRange[0],options.depthSizeRange[1]);
 	var speed = randomRange(100, 650);
 	function _display(){
 		element.style.fontSize = size + "em";
@@ -61,6 +64,7 @@ var verticalLine = function(position,size,speed){
 	
 	return {
 		display: function(){_display(position,size); _start(speed);},
-		addChar: function(character){_addCharacter(character);}
+		addChar: function(character){_addCharacter(character);},
+		options: options
 	}
 }

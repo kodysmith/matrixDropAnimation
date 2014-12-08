@@ -22,6 +22,7 @@ function play(){
 				
 				if(playState==1){
 					var line = new verticalLine();
+					line.options.depthSizeRange = Array(2,2);
 					line.display();
 			 		matrix();
 			 	}else{
